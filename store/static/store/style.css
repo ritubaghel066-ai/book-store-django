@@ -1,0 +1,276 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #222;
+}
+
+nav h2 {
+    color: white;
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #f4c542;
+}
+
+.hero {
+    min-height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 80px;
+    background-color: #f8f5ef;
+}
+
+.hero-content {
+    max-width: 550px;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #222;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.hero-button:hover {
+    background-color: #f4c542;
+    color: #222;
+}
+
+.hero-books {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-right: 40px;
+}
+
+.book {
+    width: 120px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.book-one {
+    background-color: #7b2d26;
+    transform: rotate(-8deg);
+}
+
+.book-two {
+    background-color: #2f4858;
+    height: 200px;
+    transform: rotate(3deg);
+}
+
+.book-three {
+    background-color: #8a6d3b;
+    transform: rotate(8deg);
+}
+
+.featured-books {
+    padding: 70px 80px;
+    background-color: white;
+    text-align: center;
+}
+
+.featured-books h2 {
+    font-size: 36px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #777;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.book-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.book-card {
+    width: 210px;
+    padding: 20px;
+    background-color: #f8f5ef;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-8px);
+}
+
+.book-cover {
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #2f4858;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.4;
+    border-radius: 5px;
+    margin-bottom: 18px;
+}
+
+.book-card h3 {
+    font-size: 18px;
+    color: #222;
+    margin: 10px 0 6px;
+}
+
+.book-card p {
+    color: #777;
+    margin: 0 0 10px;
+}
+
+.book-card span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+}
+
+.categories {
+    padding: 70px 80px;
+    background-color: #f8f5ef;
+    text-align: center;
+}
+
+.categories h2 {
+    font-size: 36px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.category-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.category-card {
+    width: 220px;
+    padding: 30px 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+}
+
+.category-card h3 {
+    font-size: 22px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    color: #777;
+    line-height: 1.5;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    padding: 50px 80px 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section {
+    max-width: 300px;
+}
+
+.footer-section h2 {
+    margin-top: 0;
+    font-size: 26px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-section p {
+    color: #ccc;
+    line-height: 1.6;
+    margin: 8px 0;
+}
+
+.footer-section a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+.footer-section a:hover {
+    color: #f4c542;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #aaa;
+    margin: 0;
+    font-size: 14px;
+}

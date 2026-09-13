@@ -4,13 +4,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Store</title>
+
+    {% load static %}
+<link rel="stylesheet" href="{% static 'store/style.css' %}">
 </head>
 
 <body>
 
-    <h1>Welcome to Our Book Store</h1>
+    <nav>
+    <div>
+        <h2>Book Store</h2>
+    </div>
 
-    <p>Find your favorite books at one place.</p>
+    <div>
+        <a href="/">Home</a>
+        <a href="#">Books</a>
+        <a href="#">Categories</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+</nav>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Your Next Great Read</h1>
 
+            <p>
+                Explore amazing books, discover new stories,
+                and find your next favorite read.
+            </p>
+
+            <a href="#" class="hero-button">Explore Books</a>
+        </div>
+
+        <div class="hero-books">
+            <div class="book book-one">BOOK</div>
+            <div class="book book-two">STORE</div>
+            <div class="book book-three">READ</div>
+        </div>
+    </section>
+        <section class="featured-books">
+        <h2>Featured Books</h2>
+        <p class="section-subtitle">Explore some of our popular books</p>
+
+        <div class="book-container">
+
+            <div class="book-card">
+                <div class="book-cover">The<br>Great<br>Adventure</div>
+                <h3>The Great Adventure</h3>
+                <p>Fiction</p>
+                <span>₹399</span>
+            </div>
+
+            <div class="book-card">
+                <div class="book-cover">Mystery<br>of the<br>Night</div>
+                <h3>Mystery of the Night</h3>
+                <p>Mystery</p>
+                <span>₹449</span>
+            </div>
+
+            <div class="book-card">
+                <div class="book-cover">Learn<br>Every<br>Day</div>
+                <h3>Learn Every Day</h3>
+                <p>Education</p>
+                <span>₹299</span>
+            </div>
+
+            <div class="book-card">
+                <div class="book-cover">The<br>Hidden<br>World</div>
+                <h3>The Hidden World</h3>
+                <p>Fantasy</p>
+                <span>₹499</span>
+            </div>
+
+        </div>
+    </section>
+        <section class="categories">
+        <h2>Browse Categories</h2>
+        <p class="section-subtitle">Find books according to your interests</p>
+
+        <div class="category-container">
+
+            <div class="category-card">
+                <h3>Fiction</h3>
+                <p>Explore amazing stories and adventures.</p>
+            </div>
+
+            <div class="category-card">
+                <h3>Mystery</h3>
+                <p>Uncover secrets and solve mysteries.</p>
+            </div>
+
+            <div class="category-card">
+                <h3>Education</h3>
+                <p>Learn something new every day.</p>
+            </div>
+
+            <div class="category-card">
+                <h3>Fantasy</h3>
+                <p>Enter worlds beyond imagination.</p>
+            </div>
+
+        </div>
+    </section>
+        <footer>
+        <div class="footer-content">
+
+            <div class="footer-section">
+                <h2>Book Store</h2>
+                <p>
+                    Discover books, explore new stories,
+                    and find your next favorite read.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="/">Home</a>
+                <a href="#">Books</a>
+                <a href="#">Categories</a>
+                <a href="#">About</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: bookstore@example.com</p>
+                <p>Phone: +91 98765 43210</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Book Store. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
