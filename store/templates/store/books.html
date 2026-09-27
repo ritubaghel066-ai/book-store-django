@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Store</title>
+    <title>Books - Book Store</title>
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'store/style.css' %}">
@@ -27,36 +27,13 @@
     </nav>
 
 
-    <!-- Hero Section -->
-    <section class="hero">
-
-        <div class="hero-content">
-            <h1>Discover Your Next Great Read</h1>
-
-            <p>
-                Explore amazing books, discover new stories,
-                and find your next favorite read.
-            </p>
-
-            <a href="#" class="hero-button">Explore Books</a>
-        </div>
-
-        <div class="hero-books">
-            <div class="book book-one">BOOK</div>
-            <div class="book book-two">STORE</div>
-            <div class="book book-three">READ</div>
-        </div>
-
-    </section>
-
-
-    <!-- Featured Books Section -->
+    <!-- Books Section -->
     <section class="featured-books">
 
-        <h2>Featured Books</h2>
+        <h2>All Books</h2>
 
         <p class="section-subtitle">
-            Explore some of our popular books
+            Explore our complete collection of books
         </p>
 
         <div class="book-container">
@@ -68,11 +45,11 @@
                 <div class="book-cover">
 
                     {% if book.image %}
-                    <img
-                     src="{{ book.image.url }}"
-    alt="{{ book.title }}"
-    style="width: 100%; height: 240px; max-width: 100%; object-fit: contain; display: block; border-radius: 5px;"
->
+                        <img
+                            src="{{ book.image.url }}"
+                            alt="{{ book.title }}"
+                            style="width: 100%; height: 240px; max-width: 100%; object-fit: contain; display: block; border-radius: 5px;"
+                        >
                     {% else %}
                         {{ book.title }}
                     {% endif %}
@@ -100,42 +77,6 @@
     </section>
 
 
-    <!-- Categories Section -->
-    <section class="categories">
-
-        <h2>Browse Categories</h2>
-
-        <p class="section-subtitle">
-            Find books according to your interests
-        </p>
-
-        <div class="category-container">
-
-            <div class="category-card">
-                <h3>Fiction</h3>
-                <p>Explore amazing stories and adventures.</p>
-            </div>
-
-            <div class="category-card">
-                <h3>Mystery</h3>
-                <p>Uncover secrets and solve mysteries.</p>
-            </div>
-
-            <div class="category-card">
-                <h3>Education</h3>
-                <p>Learn something new every day.</p>
-            </div>
-
-            <div class="category-card">
-                <h3>Fantasy</h3>
-                <p>Enter worlds beyond imagination.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-
     <!-- Footer -->
     <footer>
 
@@ -150,37 +91,26 @@
                 </p>
             </div>
 
-
             <div class="footer-section">
-
                 <h3>Quick Links</h3>
 
                 <a href="/">Home</a>
                 <a href="/books/">Books</a>
                 <a href="#">Categories</a>
                 <a href="#">About</a>
-
             </div>
 
-
             <div class="footer-section">
-
                 <h3>Contact</h3>
 
                 <p>Email: bookstore@example.com</p>
                 <p>Phone: +91 98765 43210</p>
-
             </div>
 
         </div>
 
-
         <div class="footer-bottom">
-
-            <p>
-                © 2026 Book Store. All Rights Reserved.
-            </p>
-
+            <p>© 2026 Book Store. All Rights Reserved.</p>
         </div>
 
     </footer>
