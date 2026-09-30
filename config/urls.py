@@ -8,6 +8,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('admin/', admin.site.urls),
     path('books/', views.books, name='books'),
+    path('book/<int:book_id>/', views.book_detail, name='book_detail'),
 ]
 
 if settings.DEBUG:

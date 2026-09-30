@@ -24,3 +24,11 @@ def books(request):
         'query': query,
         'category': category
     })
+
+
+def book_detail(request, book_id):
+    book = Book.objects.get(id=book_id)
+
+    return render(request, 'store/book_detail.html', {
+        'book': book
+    })
