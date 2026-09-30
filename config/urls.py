@@ -10,6 +10,7 @@ urlpatterns = [
     path('books/', views.books, name='books'),
     path('book/<int:book_id>/', views.book_detail, name='book_detail'),
     path('cart/', views.cart, name='cart'),
+    path('cart/add/<int:book_id>/', views.add_to_cart, name='add_to_cart'),
 ]
 
 if settings.DEBUG:

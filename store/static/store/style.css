@@ -536,3 +536,71 @@ footer {
 .back-button:hover {
     color: #222;
 }
+
+/* =========================
+   Cart Page
+========================= */
+
+.cart-item {
+    max-width: 900px;
+    margin: 0 auto 25px;
+    padding: 20px;
+    background-color: #f8f5ef;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.cart-book-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+}
+
+.cart-book-info img {
+    width: 120px;
+    height: 170px;
+    object-fit: contain;
+    border-radius: 5px;
+    display: block;
+}
+
+.cart-book-info h3 {
+    margin: 0 0 8px;
+    color: #222;
+}
+
+.cart-book-info p {
+    margin: 5px 0;
+    color: #777;
+}
+
+.cart-item-total {
+    font-size: 20px;
+    color: #222;
+}
+
+.cart-total {
+    max-width: 900px;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    text-align: right;
+}
+
+.cart-total h2 {
+    color: #222;
+}
+
+.cart-total button {
+    padding: 13px 24px;
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
