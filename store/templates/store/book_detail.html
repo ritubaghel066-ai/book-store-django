@@ -230,9 +230,9 @@
                 ₹{{ book.price }}
             </p>
 
-            <button class="add-cart-button">
+            <a href="{% url 'add_to_cart' book.id %}" class="add-to-cart">
                 Add to Cart
-            </button>
+            </a>
 
             <br>
 

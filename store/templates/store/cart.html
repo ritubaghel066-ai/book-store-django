@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cart - Book Store</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'store/style.css' %}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div>
+            <h2>Book Store</h2>
+        </div>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/books/">Books</a>
+            <a href="/#categories">Categories</a>
+            <a href="/cart/">Cart</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+
+    <!-- Cart Section -->
+    <section class="featured-books">
+
+        <h2>Your Cart</h2>
+
+        <p class="section-subtitle">
+            Review the books you have added
+        </p>
+
+
+        {% if cart_items %}
+
+            {% for item in cart_items %}
+
+                <div class="cart-item">
+
+                    <div class="cart-book-info">
+
+                        {% if item.book.image %}
+
+                            <img
+                                src="{{ item.book.image.url }}"
+                                alt="{{ item.book.title }}"
+                            >
+
+                        {% endif %}
+
+                        <div>
+                            <h3>{{ item.book.title }}</h3>
+
+                            <p>By {{ item.book.author }}</p>
+
+                            <p>
+                                Quantity: {{ item.quantity }}
+                            </p>
+
+                            <p>
+                                Price: ₹{{ item.book.price }}
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="cart-item-total">
+
+                        <strong>
+                            ₹{{ item.item_total }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+
+            <div class="cart-total">
+
+                <h2>
+                    Total: ₹{{ total_price }}
+                </h2>
+
+                <button>
+                    Proceed to Checkout
+                </button>
+
+            </div>
+
+        {% else %}
+
+            <p>Your cart is empty.</p>
+
+            <a href="/books/" class="hero-button">
+                Browse Books
+            </a>
+
+        {% endif %}
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-section">
+
+                <h2>Book Store</h2>
+
+                <p>
+                    Discover books, explore new stories,
+                    and find your next favorite read.
+                </p>
+
+            </div>
+
+
+            <div class="footer-section">
+
+                <h3>Quick Links</h3>
+
+                <a href="/">Home</a>
+                <a href="/books/">Books</a>
+                <a href="/#categories">Categories</a>
+                <a href="/cart/">Cart</a>
+
+            </div>
+
+
+            <div class="footer-section">
+
+                <h3>Contact</h3>
+
+                <p>Email: bookstore@example.com</p>
+                <p>Phone: +91 98765 43210</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Book Store. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

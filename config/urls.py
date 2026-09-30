@@ -9,9 +9,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('books/', views.books, name='books'),
     path('book/<int:book_id>/', views.book_detail, name='book_detail'),
+    path('cart/', views.cart, name='cart'),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-    
