@@ -6,13 +6,184 @@
 
     <title>{{ book.title }} - Book Store</title>
 
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'store/style.css' %}">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f5ef;
+            color: #222;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: #222;
+        }
+
+        nav h2 {
+            color: white;
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #f4c542;
+        }
+
+        .book-detail {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 40px;
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            background-color: white;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        .book-detail-image {
+            width: 350px;
+            height: 500px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f5ef;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .book-detail-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .book-detail-info {
+            flex: 1;
+        }
+
+        .book-category {
+            color: #777;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .book-detail-info h1 {
+            font-size: 42px;
+            margin: 0 0 12px;
+        }
+
+        .book-detail-info h3 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .book-description {
+            color: #555;
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .book-price {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .add-cart-button {
+            padding: 14px 28px;
+            background-color: #222;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .add-cart-button:hover {
+            background-color: #f4c542;
+            color: #222;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            color: #555;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            color: #222;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 40px 80px 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-section {
+            max-width: 300px;
+        }
+
+        .footer-section h2,
+        .footer-section h3 {
+            color: white;
+        }
+
+        .footer-section p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .footer-section a {
+            display: block;
+            color: #ccc;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+
+        .footer-section a:hover {
+            color: #f4c542;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            margin-top: 30px;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #aaa;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- Navigation Bar -->
     <nav>
         <div>
             <h2>Book Store</h2>
@@ -28,21 +199,14 @@
     </nav>
 
 
-    <!-- Book Details -->
     <section class="book-detail">
 
         <div class="book-detail-image">
 
             {% if book.image %}
-
                 <img src="{{ book.image.url }}" alt="{{ book.title }}">
-
             {% else %}
-
-                <div class="no-image">
-                    {{ book.title }}
-                </div>
-
+                <p>{{ book.title }}</p>
             {% endif %}
 
         </div>
@@ -70,7 +234,7 @@
                 Add to Cart
             </button>
 
-            <br><br>
+            <br>
 
             <a href="/books/" class="back-button">
                 ← Back to Books
@@ -81,53 +245,39 @@
     </section>
 
 
-    <!-- Footer -->
     <footer>
 
         <div class="footer-content">
 
             <div class="footer-section">
-
                 <h2>Book Store</h2>
 
                 <p>
                     Discover books, explore new stories,
                     and find your next favorite read.
                 </p>
-
             </div>
 
-
             <div class="footer-section">
-
                 <h3>Quick Links</h3>
 
                 <a href="/">Home</a>
                 <a href="/books/">Books</a>
                 <a href="/#categories">Categories</a>
                 <a href="#">About</a>
-
             </div>
 
-
             <div class="footer-section">
-
                 <h3>Contact</h3>
 
                 <p>Email: bookstore@example.com</p>
                 <p>Phone: +91 98765 43210</p>
-
             </div>
 
         </div>
 
-
         <div class="footer-bottom">
-
-            <p>
-                © 2026 Book Store. All Rights Reserved.
-            </p>
-
+            <p>© 2026 Book Store. All Rights Reserved.</p>
         </div>
 
     </footer>
