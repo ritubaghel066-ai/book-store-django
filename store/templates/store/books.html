@@ -20,7 +20,7 @@
         <div>
             <a href="/">Home</a>
             <a href="/books/">Books</a>
-            <a href="#">Categories</a>
+            <a href="/#categories">Categories</a>
             <a href="#">About</a>
             <a href="#">Contact</a>
         </div>
@@ -36,6 +36,40 @@
             Explore our complete collection of books
         </p>
 
+
+        <!-- Search Bar -->
+        <form
+            method="GET"
+            action="/books/"
+            class="search-form"
+        >
+
+            <input
+                type="text"
+                name="q"
+                placeholder="Search for a book..."
+                value="{{ query|default:'' }}"
+            >
+
+            <button type="submit">
+                Search
+            </button>
+
+        </form>
+
+
+        <!-- Category Filter -->
+        <div class="category-filter">
+
+    <a href="/books/" style="text-decoration: none;">All</a>
+    <a href="/books/?category=Fiction" style="text-decoration: none;">Fiction</a>
+    <a href="/books/?category=Self%20Help" style="text-decoration: none;">Self Help</a>
+    <a href="/books/?category=Education" style="text-decoration: none;">Education</a>
+    <a href="/books/?category=Fantasy" style="text-decoration: none;">Fantasy</a>
+
+</div>
+
+        <!-- Books -->
         <div class="book-container">
 
             {% for book in books %}
@@ -45,16 +79,20 @@
                 <div class="book-cover">
 
                     {% if book.image %}
+
                         <img
                             src="{{ book.image.url }}"
                             alt="{{ book.title }}"
-                            style="width: 100%; height: 240px; max-width: 100%; object-fit: contain; display: block; border-radius: 5px;"
                         >
+
                     {% else %}
+
                         {{ book.title }}
+
                     {% endif %}
 
                 </div>
+
 
                 <h3>{{ book.title }}</h3>
 
@@ -68,7 +106,7 @@
 
             {% empty %}
 
-            <p>No books available yet.</p>
+            <p>No books found for "{{ query }}".</p>
 
             {% endfor %}
 
@@ -83,34 +121,47 @@
         <div class="footer-content">
 
             <div class="footer-section">
+
                 <h2>Book Store</h2>
 
                 <p>
                     Discover books, explore new stories,
                     and find your next favorite read.
                 </p>
+
             </div>
 
+
             <div class="footer-section">
+
                 <h3>Quick Links</h3>
 
                 <a href="/">Home</a>
                 <a href="/books/">Books</a>
-                <a href="#">Categories</a>
+                <a href="/#categories">Categories</a>
                 <a href="#">About</a>
+
             </div>
 
+
             <div class="footer-section">
+
                 <h3>Contact</h3>
 
                 <p>Email: bookstore@example.com</p>
                 <p>Phone: +91 98765 43210</p>
+
             </div>
 
         </div>
 
+
         <div class="footer-bottom">
-            <p>© 2026 Book Store. All Rights Reserved.</p>
+
+            <p>
+                © 2026 Book Store. All Rights Reserved.
+            </p>
+
         </div>
 
     </footer>
