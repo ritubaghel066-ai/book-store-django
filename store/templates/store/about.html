@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About - Book Store</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'store/style.css' %}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div>
+            <h2>Book Store</h2>
+        </div>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/books/">Books</a>
+            <a href="/cart/">Cart</a>
+            <a href="/#categories">Categories</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+            {% if user.is_authenticated %}
+    <a href="/accounts/logout/">Logout</a>
+{% else %}
+    <a href="/accounts/login/">Login</a>
+{% endif %}
+        </div>
+    </nav>
+
+
+    <!-- About Section -->
+    <section class="featured-books">
+
+        <h2>About Our Book Store</h2>
+
+        <p class="section-subtitle">
+            Discover books and find your next favorite read.
+        </p>
+
+        <div class="book-detail-info">
+
+            <p>
+                Welcome to our Book Store, a simple online platform
+                where you can explore different books and discover
+                new stories, ideas, and knowledge.
+            </p>
+
+            <p>
+                Our goal is to make it easy for readers to browse
+                books, explore categories, view book details,
+                and add their favorite books to the cart.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-section">
+
+                <h2>Book Store</h2>
+
+                <p>
+                    Discover books, explore new stories,
+                    and find your next favorite read.
+                </p>
+
+            </div>
+
+            <div class="footer-section">
+
+                <h3>Quick Links</h3>
+
+                <a href="/">Home</a>
+                <a href="/books/">Books</a>
+                <a href="/cart/">Cart</a>
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+
+            </div>
+
+            <div class="footer-section">
+
+                <h3>Contact</h3>
+
+                <p>Email: bookstore@example.com</p>
+                <p>Phone: +91 98765 43210</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Book Store. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

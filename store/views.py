@@ -4,7 +4,12 @@ from .models import Book
 
 def home(request):
     books = Book.objects.all()
-    return render(request, 'store/home.html', {'books': books})
+    categories = Book.objects.values_list('category', flat=True).distinct()
+
+    return render(request, 'store/home.html', {
+        'books': books,
+        'categories': categories
+    })
 
 
 def books(request):
@@ -33,6 +38,7 @@ def book_detail(request, book_id):
         'book': book
     })
 
+
 def add_to_cart(request, book_id):
     cart = request.session.get('cart', {})
 
@@ -46,6 +52,7 @@ def add_to_cart(request, book_id):
     request.session['cart'] = cart
 
     return redirect('cart')
+
 
 def cart(request):
     cart_data = request.session.get('cart', {})
@@ -69,3 +76,55 @@ def cart(request):
         'cart_items': cart_items,
         'total_price': total_price,
     })
+
+
+def increase_quantity(request, book_id):
+    cart = request.session.get('cart', {})
+
+    book_id = str(book_id)
+
+    if book_id in cart:
+        cart[book_id] += 1
+
+    request.session['cart'] = cart
+
+    return redirect('cart')
+
+
+def decrease_quantity(request, book_id):
+    cart = request.session.get('cart', {})
+
+    book_id = str(book_id)
+
+    if book_id in cart:
+        if cart[book_id] > 1:
+            cart[book_id] -= 1
+        else:
+            del cart[book_id]
+
+    request.session['cart'] = cart
+
+    return redirect('cart')
+
+
+def remove_from_cart(request, book_id):
+    cart = request.session.get('cart', {})
+
+    book_id = str(book_id)
+
+    if book_id in cart:
+        del cart[book_id]
+
+    request.session['cart'] = cart
+
+    return redirect('cart')
+
+def about(request):
+    return render(request, 'store/about.html')
+
+
+def contact(request):
+    return render(request, 'store/contact.html')
+
+def checkout(request):
+    return render(request, 'store/checkout.html')

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout - Book Store</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'store/style.css' %}">
+</head>
+
+<body>
+
+    <nav>
+        <div>
+            <h2>Book Store</h2>
+        </div>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/books/">Books</a>
+            <a href="/cart/">Cart</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+        </div>
+    </nav>
+
+
+    <section class="featured-books">
+
+        <h2>Checkout</h2>
+
+        <p class="section-subtitle">
+            Enter your details to place your order.
+        </p>
+
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <input
+                type="text"
+                name="customer_name"
+                placeholder="Full Name"
+                required
+            >
+
+            <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                required
+            >
+
+             <textarea
+                name="address"
+                placeholder="Delivery Address"
+                rows="5"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Place Order
+            </button>
+
+        </form>
+
+    </section>
+
+</body>
+</html>
