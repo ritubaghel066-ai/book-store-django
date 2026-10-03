@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Book
+from .models import Book, Order
 
 
 def home(request):
@@ -127,4 +127,36 @@ def contact(request):
     return render(request, 'store/contact.html')
 
 def checkout(request):
-    return render(request, 'store/checkout.html')
+    cart_data = request.session.get('cart', {})
+
+    if not cart_data:
+        return redirect('cart')
+
+    total_price = 0
+
+    for book_id, quantity in cart_data.items():
+        book = Book.objects.get(id=book_id)
+        total_price += book.price * quantity
+
+    if request.method == 'POST':
+        customer_name = request.POST['customer_name']
+        phone = request.POST['phone']
+        address = request.POST['address']
+
+        Order.objects.create(
+            customer_name=customer_name,
+            phone=phone,
+            address=address,
+            total_price=total_price
+        )
+
+        request.session['cart'] = {}
+
+        return redirect('order_success')
+
+    return render(request, 'store/checkout.html', {
+        'total_price': total_price
+    })
+
+def order_success(request):
+    return render(request, 'store/order_success.html')   
