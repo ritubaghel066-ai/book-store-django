@@ -35,7 +35,7 @@
             Register to continue shopping.
         </p>
 
-        <form method="POST">
+        <form method="POST" class="auth-form"></form>
             {% csrf_token %}
 
             <input type="text" name="username" placeholder="Username" required>
@@ -49,7 +49,7 @@
 
         <p>
             Already have an account?
-            <a href="/login/">Login</a>
+            <a href="/accounts/login/">Login</a>
         </p>
 
     </section>

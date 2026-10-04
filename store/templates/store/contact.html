@@ -25,6 +25,11 @@
             <a href="/#categories">Categories</a>
             <a href="/about/">About</a>
             <a href="/contact/">Contact</a>
+            {% if user.is_authenticated %}
+    <a href="/accounts/logout/">Logout</a>
+    {% else %}
+    <a href="/accounts/login/">Login</a>
+    {% endif %}
         </div>
     </nav>
 
@@ -38,7 +43,7 @@
             Have any questions? Feel free to contact us.
         </p>
 
-        <div class="book-detail-info">
+        <div class="contact-content">
 
             <p>
                 Email: bookstore@example.com
