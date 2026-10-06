@@ -106,7 +106,7 @@
             {% if book.image %}
 
                 <img
-                    src="{{ book.image.url }}"
+                    src="{% static 'store/books/' %}{{ book.image.name|cut:'books/' }}"
                     alt="{{ book.title }}"
                 >
 

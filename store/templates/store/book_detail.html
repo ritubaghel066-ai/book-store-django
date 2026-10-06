@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{{ book.title }} - Book Store</title>
+    {% load static %}
 
     <style>
         body {
@@ -205,7 +206,7 @@
         <div class="book-detail-image">
 
             {% if book.image %}
-                <img src="{{ book.image.url }}" alt="{{ book.title }}">
+                <img src="{% static 'store/books/' %}{{ book.image.name|cut:'books/' }}" alt="{{ book.title }}">
             {% else %}
                 <p>{{ book.title }}</p>
             {% endif %}
