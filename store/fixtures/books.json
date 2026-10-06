@@ -1,0 +1,132 @@
+[
+{
+  "model": "store.book",
+  "pk": 1,
+  "fields": {
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "description": "A story about following dreams, discovering oneself, and finding the meaning of life.",
+    "price": "399.00",
+    "category": "Fiction",
+    "image": "books/The_Alchemist.jpg",
+    "created_at": "2026-09-13T01:32:03.642Z"
+  }
+},
+{
+  "model": "store.book",
+  "pk": 2,
+  "fields": {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "description": "A practical book about building good habits and improving daily routines.",
+    "price": "499.00",
+    "category": "Self Help",
+    "image": "books/Atomic_habits.jpg",
+    "created_at": "2026-09-13T01:39:51.144Z"
+  }
+},
+{
+  "model": "store.book",
+  "pk": 3,
+  "fields": {
+    "title": "Ikigai",
+    "author": "Hector Garcia and Francesc Miralles",
+    "description": "Ikigai explores the Japanese concept of finding purpose and meaning in everyday life. The book discusses habits, relationships, lifestyle, and ideas that can help people live a more meaningful and balanced life.",
+    "price": "399.00",
+    "category": "Self Help",
+    "image": "books/Ikigai.jpg",
+    "created_at": "2026-10-03T05:19:04.365Z"
+  }
+},
+{
+  "model": "store.book",
+  "pk": 4,
+  "fields": {
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert T. Kiyosaki",
+    "description": "Rich Dad Poor Dad explains basic ideas about money, financial education, assets, liabilities, and building long-term financial independence. The book presents different approaches to managing and thinking about money.",
+    "price": "499.00",
+    "category": "Finance",
+    "image": "books/Rich_Dad_Poor_Dad.jpg",
+    "created_at": "2026-10-03T05:19:48.650Z"
+  }
+},
+{
+  "model": "store.book",
+  "pk": 5,
+  "fields": {
+    "title": "The Psychology of Money",
+    "author": "Morgan Housel",
+    "description": "The Psychology of Money explores how emotions, behavior, personal experiences, and habits influence financial decisions. It presents practical ideas about saving, investing, wealth, and long-term financial thinking.",
+    "price": "449.00",
+    "category": "Finance",
+    "image": "books/The_Psychology_of_Money.jpg",
+    "created_at": "2026-10-03T05:20:24.719Z"
+  }
+},
+{
+  "model": "store.book",
+  "pk": 6,
+  "fields": {
+    "title": "The Kite Runner",
+    "author": "Khaled Hosseini",
+    "description": "The Kite Runner is a story about friendship, family, guilt, and redemption. It follows the relationship between two childhood friends and explores how choices from the past can affect life in the future.",
+    "price": "399.00",
+    "category": "Fiction",
+    "image": "books/The_Kite_Runner.jpg",
+    "created_at": "2026-10-03T05:27:55.177Z"
+  }
+},
+{
+  "model": "store.book",
+  "pk": 7,
+  "fields": {
+    "title": "Think and Grow Rich",
+    "author": "Napoleon Hill",
+    "description": "Think and Grow Rich discusses principles of success, goal setting, persistence, and personal achievement. The book focuses on developing a determined mindset and turning goals into practical action.",
+    "price": "349.00",
+    "category": "Self Help",
+    "image": "books/Think_and_Grow_Rich.jpg",
+    "created_at": "2026-10-03T05:28:42.953Z"
+  }
+},
+{
+  "model": "store.book",
+  "pk": 8,
+  "fields": {
+    "title": "The 7 Habits of Highly Effective People",
+    "author": "Stephen R. Covey",
+    "description": "The 7 Habits of Highly Effective People presents principles for personal effectiveness, responsibility, relationships, and continuous improvement. It focuses on developing habits that support meaningful personal and professional growth.",
+    "price": "499.00",
+    "category": "Self Help",
+    "image": "books/The_7_Habits_of_Highly_Effective_People.jpg",
+    "created_at": "2026-10-03T05:29:18.454Z"
+  }
+},
+{
+  "model": "store.book",
+  "pk": 9,
+  "fields": {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "description": "To Kill a Mockingbird is a classic novel that explores justice, morality, compassion, and prejudice through the experiences of a young girl growing up in the American South.",
+    "price": "449.00",
+    "category": "Fiction",
+    "image": "books/To_Kill_a_Mockingbird.jpg",
+    "created_at": "2026-10-03T05:31:39.924Z"
+  }
+},
+{
+  "model": "store.book",
+  "pk": 10,
+  "fields": {
+    "title": "Build, Don't Talk",
+    "author": "Raj Shamani",
+    "description": "Build, Don't Talk is a practical guide about personal growth, communication, networking, finance, and building useful real-world skills. The book focuses on taking action, developing valuable skills, and learning things that are often not taught in school.",
+    "price": "399.00",
+    "category": "Self Help",
+    "image": "books/Build_Dont_Talk.jpg",
+    "created_at": "2026-10-03T05:33:46.096Z"
+  }
+}
+]
