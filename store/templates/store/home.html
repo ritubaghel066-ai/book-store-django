@@ -77,9 +77,9 @@
 
                         {% if book.image %}
 
-                        <img
-                            src="{{ book.image.url }}"
-                            alt="{{ book.title }}"
+                       <img
+                             src="{% static 'store/books/' %}{{ book.image.name|cut:'books/' }}"
+                             alt="{{ book.title }}"
                         >
 
                         {% else %}
