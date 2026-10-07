@@ -25,11 +25,12 @@
             <a href="/#categories">Categories</a>
             <a href="/about/">About</a>
             <a href="/contact/">Contact</a>
+
             {% if user.is_authenticated %}
-    <a href="/accounts/logout/">Logout</a>
-{% else %}
-    <a href="/accounts/login/">Login</a>
-{% endif %}
+                <a href="/accounts/logout/">Logout</a>
+            {% else %}
+                <a href="/accounts/login/">Login</a>
+            {% endif %}
         </div>
     </nav>
 
@@ -43,19 +44,39 @@
             Discover books and find your next favorite read.
         </p>
 
-        <div class="about-content"></div>
+        <div class="about-content">
 
-            <p>
-                Welcome to our Book Store, a simple online platform
-                where you can explore different books and discover
-                new stories, ideas, and knowledge.
-            </p>
+            <div class="about-text">
 
-            <p>
-                Our goal is to make it easy for readers to browse
-                books, explore categories, view book details,
-                and add their favorite books to the cart.
-            </p>
+                <h3>Welcome to Our Book Store</h3>
+
+                <p>
+                    Welcome to our Book Store, a simple online platform
+                    where you can explore different books and discover
+                    new stories, ideas, and knowledge.
+                </p>
+
+                <p>
+                    Our goal is to make it easy for readers to browse
+                    books, explore categories, view book details,
+                    and add their favorite books to the cart.
+                </p>
+
+                <h3>What We Offer</h3>
+
+                <p>
+                    Our collection includes books from different categories,
+                    allowing readers to discover books that match their
+                    interests and preferences.
+                </p>
+
+                <p>
+                    We aim to provide a simple and comfortable browsing
+                    experience so that finding your next favorite book
+                    becomes easy and enjoyable.
+                </p>
+
+            </div>
 
         </div>
 

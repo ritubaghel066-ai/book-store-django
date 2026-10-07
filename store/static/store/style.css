@@ -1,6 +1,20 @@
+/* =========================
+   Global Styles
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background: #fffaf7;
+    color: #29252a;
 }
 
 
@@ -12,24 +26,30 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
-    background-color: #222;
+    padding: 18px 60px;
+    background: rgba(43, 36, 47, 0.97);
+    box-shadow: 0 4px 20px rgba(43, 36, 47, 0.12);
+    position: relative;
+    z-index: 10;
 }
 
 nav h2 {
-    color: white;
+    color: #fffaf7;
     margin: 0;
+    font-size: 25px;
+    letter-spacing: 0.5px;
 }
 
 nav a {
-    color: white;
+    color: #f9eef0;
     text-decoration: none;
     margin-left: 25px;
-    font-size: 16px;
+    font-size: 15px;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #f4c542;
+    color: #f3b6b2;
 }
 
 
@@ -38,57 +58,77 @@ nav a:hover {
 ========================= */
 
 .hero {
-    min-height: 500px;
+    min-height: 560px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 70px 80px;
-    background-color: #f8f5ef;
-    box-sizing: border-box;
+    padding: 80px;
+    background:
+        radial-gradient(circle at 15% 25%, rgba(245, 190, 185, 0.45), transparent 30%),
+        radial-gradient(circle at 85% 20%, rgba(190, 205, 238, 0.45), transparent 30%),
+        radial-gradient(circle at 70% 90%, rgba(218, 196, 226, 0.4), transparent 32%),
+        linear-gradient(135deg, #fff7f2, #f7f1f8 55%, #edf3fb);
     overflow: hidden;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background: rgba(255, 213, 190, 0.28);
+    border-radius: 50%;
+    top: -100px;
+    right: 30%;
+    filter: blur(5px);
 }
 
 .hero-content {
     max-width: 600px;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content h1 {
-    font-size: 56px;
-    line-height: 1.1;
-    margin: 0 0 20px;
-    color: #222;
+    font-size: 58px;
+    line-height: 1.08;
+    margin: 0 0 22px;
+    color: #332c35;
+    letter-spacing: -1px;
 }
 
 .hero-content p {
     font-size: 18px;
-    line-height: 1.7;
-    color: #555;
-    margin-bottom: 30px;
+    line-height: 1.8;
+    color: #665e68;
+    margin-bottom: 32px;
     max-width: 520px;
 }
 
 .hero-button {
     display: inline-block;
-    padding: 14px 28px;
-    background-color: #222;
+    padding: 14px 30px;
+    background: #4a3f4f;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 30px;
     font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(74, 63, 79, 0.2);
+    transition: all 0.3s ease;
 }
 
 .hero-button:hover {
-    background-color: #f4c542;
-    color: #222;
+    background: #c98282;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(201, 130, 130, 0.25);
 }
 
 
 /* =========================
    Hero Books
-========================= */
-
-/* =========================
-   Hero Book Visuals
 ========================= */
 
 .hero-books {
@@ -97,6 +137,8 @@ nav a:hover {
     gap: 18px;
     margin-right: 30px;
     perspective: 800px;
+    position: relative;
+    z-index: 2;
 }
 
 .book {
@@ -109,59 +151,63 @@ nav a:hover {
     font-weight: bold;
     font-size: 18px;
     letter-spacing: 1px;
-    border-radius: 5px;
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.22);
+    border-radius: 7px;
+    box-shadow: 0 18px 35px rgba(60, 45, 60, 0.22);
     transition: transform 0.3s ease;
 }
 
 .book:hover {
-    transform: translateY(-10px) scale(1.03);
+    transform: translateY(-12px) scale(1.04);
 }
 
 .book-one {
-    background-color: #7b2d26;
+    background: linear-gradient(145deg, #9f5f65, #713f48);
     transform: rotate(-8deg);
 }
 
 .book-two {
-    background-color: #2f4858;
+    background: linear-gradient(145deg, #667d99, #40556f);
     height: 210px;
     transform: rotate(2deg);
 }
 
 .book-three {
-    background-color: #8a6d3b;
+    background: linear-gradient(145deg, #b38b63, #806044);
     transform: rotate(8deg);
 }
+
 
 /* =========================
    Featured Books
 ========================= */
 
 .featured-books {
-    padding: 70px 80px;
-    background-color: white;
+    padding: 85px 80px;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(245, 215, 211, 0.35), transparent 25%),
+        radial-gradient(circle at 90% 80%, rgba(215, 211, 236, 0.3), transparent 28%),
+        #fffaf7;
     text-align: center;
 }
 
 .featured-books h2 {
-    font-size: 38px;
-    color: #222;
+    font-size: 40px;
+    color: #342e36;
     margin: 0 0 12px;
-    letter-spacing: 0.5px;
+    letter-spacing: -0.5px;
 }
 
 .section-subtitle {
-    color: #777;
+    color: #756d76;
     font-size: 16px;
     margin: 0 0 45px;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .book-container {
     display: flex;
     justify-content: center;
-    gap: 35px;
+    gap: 30px;
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
@@ -181,19 +227,18 @@ nav a:hover {
     width: 210px;
     height: 430px;
     padding: 18px;
-    background-color: #f8f5ef;
-    border-radius: 10px;
-    border: 1px solid #eee;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 16px;
+    border: 1px solid rgba(220, 205, 214, 0.7);
+    box-shadow: 0 10px 30px rgba(70, 50, 70, 0.09);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
 }
 
 .book-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.14);
+    transform: translateY(-10px);
+    box-shadow: 0 18px 35px rgba(70, 50, 70, 0.15);
 }
 
 
@@ -209,14 +254,13 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #2f4858;
-    color: white;
+    background: linear-gradient(145deg, #eee5ed, #e9eef7);
+    color: #4a414b;
     font-size: 20px;
     font-weight: bold;
     line-height: 1.4;
-    border-radius: 6px;
+    border-radius: 11px;
     margin-bottom: 15px;
-    box-sizing: border-box;
 }
 
 .book-cover img {
@@ -226,7 +270,7 @@ nav a:hover {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    border-radius: 5px;
+    border-radius: 9px;
 }
 
 
@@ -236,18 +280,34 @@ nav a:hover {
 
 .book-card h3 {
     min-height: 48px;
-    margin: 10px 0;
+    margin: 8px 0 6px;
+    color: #342e36;
+    font-size: 17px;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .book-card p {
-    color: #777;
-    margin: 0 0 10px;
+    margin: 3px 0;
+    color: #7b737c;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.book-card p:nth-of-type(2) {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .book-card span {
+    margin-top: 5px;
     font-size: 18px;
     font-weight: bold;
-    color: #222;
+    color: #9a5c65;
 }
 
 
@@ -256,15 +316,17 @@ nav a:hover {
 ========================= */
 
 .categories {
-    padding: 80px 80px;
-    background-color: #f8f5ef;
+    padding: 85px 80px;
+    background:
+        radial-gradient(circle at 85% 15%, rgba(200, 211, 238, 0.42), transparent 28%),
+        radial-gradient(circle at 15% 85%, rgba(244, 205, 202, 0.38), transparent 28%),
+        #f7f2f6;
     text-align: center;
-    box-sizing: border-box;
 }
 
 .categories h2 {
-    font-size: 38px;
-    color: #222;
+    font-size: 40px;
+    color: #342e36;
     margin: 0 0 12px;
 }
 
@@ -274,58 +336,37 @@ nav a:hover {
     gap: 25px;
     flex-wrap: wrap;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 35px auto 0;
 }
-
-
-/* Clickable Category Card */
 
 .category-card {
     width: 230px;
-    padding: 32px 22px;
-    background-color: white;
-    border-radius: 10px;
-    border: 1px solid #eee;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-sizing: border-box;
+    padding: 34px 22px;
+    background: rgba(255, 255, 255, 0.82);
+    border-radius: 16px;
+    border: 1px solid rgba(220, 205, 214, 0.7);
+    box-shadow: 0 10px 25px rgba(70, 50, 70, 0.08);
+    transition: all 0.3s ease;
     display: block;
     text-decoration: none !important;
-    color: #222 !important;
+    color: #342e36 !important;
 }
 
 .category-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.13);
+    transform: translateY(-8px);
+    box-shadow: 0 16px 30px rgba(70, 50, 70, 0.13);
+    background: white;
 }
-
-
-/* Category Heading */
 
 .category-card h3 {
     font-size: 22px;
-    color: #222 !important;
+    color: #4a3f4f !important;
     margin: 0 0 12px;
-    text-decoration: none !important;
 }
-
-
-/* Category Description */
 
 .category-card p {
-    color: #777 !important;
+    color: #7b737c !important;
     line-height: 1.5;
-    text-decoration: none !important;
-}
-
-
-/* Remove underline in every link state */
-
-.category-card:link,
-.category-card:visited,
-.category-card:hover,
-.category-card:active {
-    text-decoration: none !important;
 }
 
 
@@ -334,9 +375,9 @@ nav a:hover {
 ========================= */
 
 footer {
-    background-color: #222;
+    background: #332c38;
     color: white;
-    padding: 50px 80px 20px;
+    padding: 55px 80px 22px;
 }
 
 .footer-content {
@@ -362,31 +403,32 @@ footer {
 }
 
 .footer-section p {
-    color: #ccc;
+    color: #d8ced8;
     line-height: 1.6;
     margin: 8px 0;
 }
 
 .footer-section a {
     display: block;
-    color: #ccc;
+    color: #d8ced8;
     text-decoration: none;
     margin: 10px 0;
+    transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-    color: #f4c542;
+    color: #f2b6b4;
 }
 
 .footer-bottom {
-    border-top: 1px solid #444;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     margin-top: 40px;
     padding-top: 20px;
     text-align: center;
 }
 
 .footer-bottom p {
-    color: #aaa;
+    color: #bcb2bd;
     margin: 0;
     font-size: 14px;
 }
@@ -407,40 +449,34 @@ footer {
 
 .search-form input {
     flex: 1;
-    padding: 13px 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 14px 17px;
+    border: 1px solid #ded4dc;
+    border-radius: 25px;
     font-size: 16px;
     outline: none;
+    background: white;
 }
 
 .search-form input:focus {
-    border-color: #222;
+    border-color: #b77b86;
+    box-shadow: 0 0 0 3px rgba(183, 123, 134, 0.12);
 }
 
 .search-form button {
-    padding: 13px 24px;
-    background-color: #222;
+    padding: 14px 25px;
+    background: #4a3f4f;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     font-size: 16px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .search-form button:hover {
-    background-color: #f4c542;
-    color: #222;
+    background: #c98282;
 }
 
-/* Category Filter */
-.category-filter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 30px;
-}
 
 /* =========================
    Category Filter
@@ -452,23 +488,26 @@ footer {
     align-items: center;
     gap: 10px;
     margin: 20px auto 30px;
+    flex-wrap: wrap;
 }
 
 .category-filter a {
     text-decoration: none !important;
-    color: #555 !important;
-    background-color: #f8f5ef;
+    color: #665e68 !important;
+    background-color: #f1e9ef;
     padding: 10px 18px;
-    border-radius: 5px;
+    border-radius: 22px;
     font-size: 15px;
     display: inline-block;
+    transition: all 0.3s ease;
 }
 
 .category-filter a:hover {
-    text-decoration: none !important;
-    background-color: #222;
+    background-color: #4a3f4f;
     color: white !important;
+    transform: translateY(-2px);
 }
+
 
 /* =========================
    Book Details Page
@@ -480,8 +519,12 @@ footer {
     gap: 60px;
     max-width: 1100px;
     margin: 60px auto;
-    padding: 40px;
-    box-sizing: border-box;
+    padding: 45px;
+    background:
+        radial-gradient(circle at 90% 10%, rgba(220, 210, 237, 0.4), transparent 30%),
+        #fffaf7;
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(70, 50, 70, 0.08);
 }
 
 .book-detail-image {
@@ -491,8 +534,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f8f5ef;
-    border-radius: 8px;
+    background: #f1e9ef;
+    border-radius: 16px;
     overflow: hidden;
 }
 
@@ -509,80 +552,81 @@ footer {
 }
 
 .book-category {
-    color: #777;
-    font-size: 16px;
+    color: #a2636d;
+    font-size: 15px;
     margin-bottom: 12px;
+    font-weight: bold;
 }
 
 .book-detail-info h1 {
-    font-size: 42px;
-    color: #222;
+    font-size: 44px;
+    color: #342e36;
     margin: 0 0 12px;
 }
 
 .book-detail-info h3 {
     font-size: 20px;
     font-weight: normal;
-    color: #555;
+    color: #6d6570;
     margin: 0 0 25px;
 }
 
 .book-description {
     font-size: 17px;
-    line-height: 1.7;
-    color: #555;
+    line-height: 1.8;
+    color: #625b64;
     margin-bottom: 25px;
 }
 
 .book-price {
     font-size: 28px;
     font-weight: bold;
-    color: #222;
+    color: #9a5c65;
     margin-bottom: 25px;
 }
 
 .add-cart-button {
     padding: 14px 28px;
-    background-color: #222;
+    background: #4a3f4f;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 28px;
     font-size: 16px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .add-cart-button:hover {
-    background-color: #f4c542;
-    color: #222;
+    background: #c98282;
+    transform: translateY(-2px);
 }
 
 .back-button {
-    color: #555;
+    color: #6d6570;
     text-decoration: none;
     font-size: 15px;
 }
 
 .back-button:hover {
-    color: #222;
+    color: #a2636d;
 }
+
 
 /* =========================
    Cart Page
 ========================= */
 
-
-
 .cart-item {
     max-width: 900px;
     margin: 0 auto 20px;
     padding: 20px 25px;
-    background-color: #f8f5ef;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #eadfe7;
+    border-radius: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-sizing: border-box;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 25px rgba(70, 50, 70, 0.07);
 }
 
 .cart-book-info {
@@ -596,26 +640,27 @@ footer {
     width: 120px;
     height: 170px;
     object-fit: contain;
-    border-radius: 5px;
+    border-radius: 8px;
     display: block;
 }
 
 .cart-book-info h3 {
     margin: 0 0 8px;
-    color: #222;
+    color: #342e36;
     font-size: 20px;
 }
 
 .cart-book-info p {
     margin: 5px 0;
-    color: #777;
+    color: #7b737c;
 }
 
 .cart-item-total {
     font-size: 20px;
     font-weight: bold;
-    color: #222;
+    color: #9a5c65;
 }
+
 
 /* =========================
    Cart Total
@@ -625,99 +670,31 @@ footer {
     max-width: 900px;
     margin: 35px auto 0;
     padding: 25px 0 0;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #dfd4dd;
     text-align: right;
 }
 
 .cart-total h2 {
     margin: 0 0 20px;
-    color: #222;
+    color: #342e36;
     font-size: 26px;
 }
 
 .cart-total button {
-    padding: 13px 24px;
-    background-color: #222;
+    padding: 13px 25px;
+    background: #4a3f4f;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 26px;
     font-size: 16px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.book-card h3 {
-    min-height: 48px;
-    margin: 8px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.cart-total button:hover {
+    background: #c98282;
 }
 
-.book-card {
-    width: 210px;
-    height: 430px;
-    padding: 20px;
-    background-color: #f8f5ef;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-}
-
-
-.book-card p:nth-of-type(2) {
-    min-height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.book-card span {
-    margin-top: 4px;
-}
-
-/* =========================
-   Login and Register Forms
-========================= */
-
-.auth-form {
-    width: 100%;
-    max-width: 400px;
-    margin: 30px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.auth-form input {
-    padding: 13px 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    box-sizing: border-box;
-    outline: none;
-}
-
-.auth-form input:focus {
-    border-color: #222;
-}
-
-.auth-form button {
-    padding: 13px 24px;
-    background-color: #222;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.auth-form button:hover {
-    background-color: #f4c542;
-    color: #222;
-}
 
 /* =========================
    Cart Quantity Controls
@@ -736,40 +713,90 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #222;
+    background-color: #4a3f4f;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 50%;
     font-size: 18px;
+    transition: all 0.3s ease;
 }
 
 .cart-quantity a:hover {
-    background-color: #f4c542;
-    color: #222;
+    background-color: #c98282;
 }
 
 .cart-quantity span {
     font-size: 16px;
     font-weight: bold;
-    color: #222;
+    color: #342e36;
     min-width: 20px;
     text-align: center;
 }
+
 
 /* =========================
    Cart Remove Link
 ========================= */
 
 .cart-book-info > div > a {
-    color: #777;
+    color: #8a7e89;
     text-decoration: none;
     font-size: 14px;
 }
 
 .cart-book-info > div > a:hover {
-    color: #222;
+    color: #a45f68;
     text-decoration: underline;
 }
+
+
+/* =========================
+   Login and Register Forms
+========================= */
+
+.auth-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #eadfe7;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(70, 50, 70, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-form input {
+    padding: 13px 15px;
+    border: 1px solid #d9cdd7;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.auth-form input:focus {
+    border-color: #b77b86;
+    box-shadow: 0 0 0 3px rgba(183, 123, 134, 0.12);
+}
+
+.auth-form button {
+    padding: 13px 24px;
+    background: #4a3f4f;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth-form button:hover {
+    background: #c98282;
+}
+
 
 /* =========================
    About Page
@@ -778,15 +805,21 @@ footer {
 .about-content {
     max-width: 800px;
     margin: 30px auto 0;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid #eadfe7;
+    border-radius: 20px;
+    box-shadow: 0 10px 28px rgba(70, 50, 70, 0.06);
     text-align: left;
 }
 
 .about-content p {
-    color: #555;
+    color: #625b64;
     font-size: 17px;
     line-height: 1.8;
     margin-bottom: 20px;
 }
+
 
 /* =========================
    Contact Page
@@ -795,51 +828,35 @@ footer {
 .contact-content {
     max-width: 700px;
     margin: 30px auto 0;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid #eadfe7;
+    border-radius: 20px;
+    box-shadow: 0 10px 28px rgba(70, 50, 70, 0.06);
     text-align: center;
 }
 
 .contact-content p {
-    color: #555;
+    color: #625b64;
     font-size: 17px;
     line-height: 1.8;
     margin: 12px 0;
 }
 
+
 /* =========================
-   Featured Book Typography
+   General Page Background
 ========================= */
 
-.book-card h3 {
-    min-height: 48px;
-    margin: 8px 0 6px;
-    color: #222;
-    font-size: 17px;
-    line-height: 1.3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+main {
+    min-height: 500px;
+    padding-top: 1px;
+    background:
+        radial-gradient(circle at 90% 10%, rgba(216, 205, 232, 0.28), transparent 28%),
+        radial-gradient(circle at 10% 90%, rgba(246, 208, 205, 0.28), transparent 28%),
+        #fffaf7;
 }
 
-.book-card p {
-    margin: 3px 0;
-    color: #777;
-    font-size: 14px;
-    line-height: 1.4;
-}
-
-.book-card p:nth-of-type(2) {
-    min-height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.book-card span {
-    margin-top: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #222;
-}
 
 /* =========================
    Responsive Design
@@ -857,7 +874,7 @@ footer {
     }
 
     .hero {
-        padding: 50px 40px;
+        padding: 60px 40px;
     }
 
     .hero-content h1 {
@@ -868,7 +885,18 @@ footer {
         margin-right: 0;
     }
 
+    .book-detail {
+        gap: 35px;
+        padding: 30px;
+    }
+
+    .book-detail-image {
+        width: 320px;
+        min-width: 320px;
+        height: 450px;
+    }
 }
+
 
 @media (max-width: 700px) {
 
@@ -886,7 +914,7 @@ footer {
         flex-direction: column;
         text-align: center;
         gap: 50px;
-        padding: 50px 25px;
+        padding: 55px 25px;
     }
 
     .hero-content h1 {
@@ -900,14 +928,1283 @@ footer {
 
     .hero-books {
         justify-content: center;
+        transform: scale(0.85);
     }
 
     .featured-books {
-        padding: 60px 25px;
+        padding: 65px 25px;
     }
 
     .categories {
-        padding: 60px 25px;
+        padding: 65px 25px;
     }
 
+    .book-detail {
+        flex-direction: column;
+        margin: 30px 20px;
+        padding: 25px;
+    }
+
+    .book-detail-image {
+        width: 100%;
+        min-width: 0;
+        height: 450px;
+    }
+
+    .book-detail-info {
+        padding-top: 0;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .cart-total {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    footer {
+        padding: 45px 25px 20px;
+    }
+}
+
+/* ===== Dark Blush Pink Background ===== */
+
+html {
+    background: #c87587;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(
+            circle at 8% 12%,
+            rgba(255, 220, 225, 0.45),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 92% 15%,
+            rgba(255, 190, 205, 0.35),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(170, 75, 105, 0.25),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #d88998 0%,
+            #c87587 50%,
+            #d88998 100%
+        );
+
+    color: #3a2027;
+}
+
+/* White-pink website area */
+
+main {
+    background: #fff6f6;
+    margin: 24px;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(92, 35, 48, 0.16);
+}
+
+/* Sections inside the website */
+
+.hero {
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255, 210, 220, 0.75),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fff6f6,
+            #fcebed
+        );
+}
+
+.featured-books {
+    background: #fff6f6;
+}
+
+.categories {
+    background: #fff6f6;
+}
+
+/* Dark blush pink buttons */
+
+.hero-button,
+.search-form button,
+.add-cart-button,
+.auth-form button,
+.cart-total button {
+    background: #b83f58;
+}
+
+.hero-button:hover,
+.search-form button:hover,
+.add-cart-button:hover,
+.auth-form button:hover,
+.cart-total button:hover {
+    background: #922f45;
+}
+
+/* Book cards */
+
+.book-card {
+    background: #fffafa;
+    border: 1px solid rgba(190, 100, 120, 0.18);
+    box-shadow: 0 8px 25px rgba(130, 55, 70, 0.12);
+}
+
+/* ===== Attractive About Section ===== */
+
+.about-content {
+    max-width: 900px;
+    margin: 35px auto 20px;
+    padding: 40px 45px;
+    background: linear-gradient(
+        135deg,
+        #fffafa 0%,
+        #fff0f3 100%
+    );
+    border: 1px solid rgba(184, 63, 88, 0.18);
+    border-radius: 24px;
+    box-shadow:
+        0 12px 30px rgba(120, 45, 65, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative pink glow */
+
+.about-content::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: rgba(216, 137, 152, 0.18);
+    border-radius: 50%;
+    top: -90px;
+    right: -60px;
+}
+
+.about-content::after {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    background: rgba(184, 63, 88, 0.08);
+    border-radius: 50%;
+    bottom: -65px;
+    left: -45px;
+}
+
+/* About text */
+
+.about-text {
+    position: relative;
+    z-index: 1;
+}
+
+.about-text h3 {
+    color: #a93650;
+    font-size: 24px;
+    margin: 0 0 15px;
+}
+
+.about-text h3:not(:first-child) {
+    margin-top: 30px;
+}
+
+.about-text p {
+    color: #5a3b42;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0 0 16px;
+}
+
+/* Small accent line */
+
+.about-text h3::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 3px;
+    background: #b83f58;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+/* ===== Attractive Contact Section ===== */
+
+.contact-content {
+    max-width: 900px;
+    margin: 35px auto 20px;
+    padding: 40px 45px;
+    background: linear-gradient(
+        135deg,
+        #fffafa 0%,
+        #fff0f3 100%
+    );
+    border: 1px solid rgba(184, 63, 88, 0.18);
+    border-radius: 24px;
+    box-shadow:
+        0 12px 30px rgba(120, 45, 65, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative pink glow */
+
+.contact-content::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: rgba(216, 137, 152, 0.18);
+    border-radius: 50%;
+    top: -90px;
+    right: -60px;
+}
+
+.contact-content::after {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    background: rgba(184, 63, 88, 0.08);
+    border-radius: 50%;
+    bottom: -65px;
+    left: -45px;
+}
+
+/* Contact information */
+
+.contact-info {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-info h3 {
+    color: #a93650;
+    font-size: 26px;
+    margin: 0 0 15px;
+}
+
+.contact-info h3::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 3px;
+    background: #b83f58;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+.contact-info > p {
+    color: #5a3b42;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Individual contact details */
+
+.contact-item {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(184, 63, 88, 0.12);
+    border-radius: 16px;
+    padding: 18px 22px;
+    margin-bottom: 15px;
+    transition: 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(120, 45, 65, 0.12);
+}
+
+.contact-item h4 {
+    color: #a93650;
+    font-size: 17px;
+    margin: 0 0 6px;
+}
+
+.contact-item p {
+    color: #5a3b42;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* ===== Attractive Category Cards ===== */
+
+.category-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.category-card {
+    width: 220px;
+    min-height: 150px;
+    padding: 25px;
+    background: linear-gradient(
+        135deg,
+        #fffafa 0%,
+        #fff0f3 100%
+    );
+    border: 1px solid rgba(184, 63, 88, 0.18);
+    border-radius: 22px;
+    box-shadow: 0 10px 25px rgba(120, 45, 65, 0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Decorative glow */
+
+.category-card::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(216, 137, 152, 0.18);
+    border-radius: 50%;
+    top: -50px;
+    right: -35px;
+}
+
+/* Category icon */
+
+.category-card span {
+    font-size: 42px;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Category name */
+
+.category-card h3 {
+    color: #a93650;
+    font-size: 19px;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hover effect */
+
+.category-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 16px 30px rgba(120, 45, 65, 0.18);
+    border-color: rgba(184, 63, 88, 0.3);
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .category-card {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+/* ===== Single Premium Cart Box ===== */
+
+.cart-box {
+    max-width: 1050px;
+    margin: 35px auto;
+    padding: 35px;
+    background: linear-gradient(
+        135deg,
+        #fffafa 0%,
+        #fff0f3 100%
+    );
+    border: 1px solid rgba(184, 63, 88, 0.18);
+    border-radius: 28px;
+    box-shadow: 0 15px 35px rgba(120, 45, 65, 0.12);
+    box-sizing: border-box;
+}
+
+/* Cart item inside main box */
+
+.cart-box .cart-item {
+    max-width: none;
+    margin: 0;
+    padding: 10px 5px 30px;
+    background: transparent !important;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Book information */
+
+.cart-box .cart-book-info {
+    gap: 25px;
+}
+
+.cart-box .cart-book-info img {
+    width: 120px;
+    height: 170px;
+    object-fit: contain;
+    background: white;
+    padding: 6px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(120, 45, 65, 0.12);
+}
+
+.cart-box .cart-book-info h3 {
+    color: #342e36;
+    font-size: 21px;
+}
+
+.cart-box .cart-book-info p {
+    color: #76636a;
+}
+
+/* Quantity buttons */
+
+.cart-box .cart-quantity a {
+    background: #b83f58 !important;
+    color: white;
+}
+
+.cart-box .cart-quantity a:hover {
+    background: #922f45 !important;
+}
+
+/* Item price */
+
+.cart-box .cart-item-total {
+    color: #a93650 !important;
+    font-size: 22px;
+}
+
+/* Remove */
+
+.cart-box .cart-book-info > div > a {
+    color: #a45f68;
+}
+
+/* Divider before total */
+
+.cart-box .cart-total {
+    max-width: none;
+    margin: 5px 0 0;
+    padding: 25px 5px 0;
+    border-top: 1px solid rgba(184, 63, 88, 0.18);
+    background: transparent;
+    box-shadow: none;
+    text-align: right;
+}
+
+/* Total */
+
+.cart-box .cart-total h2 {
+    color: #342e36;
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+/* Checkout button */
+
+.cart-box .cart-total button {
+    background: #b83f58 !important;
+    color: white;
+    border: none;
+    border-radius: 28px;
+    padding: 14px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 8px 18px rgba(184, 63, 88, 0.22);
+    transition: all 0.3s ease;
+}
+
+.cart-box .cart-total button:hover {
+    background: #922f45 !important;
+    transform: translateY(-2px);
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .cart-box {
+        margin: 25px 15px;
+        padding: 22px;
+    }
+
+    .cart-box .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-box .cart-total {
+        text-align: center;
+    }
+
+}
+
+/* ===== Remove Button ===== */
+
+.cart-box .cart-book-info > div > a {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 7px 16px;
+    background: #f8dce1;
+    color: #a93650 !important;
+    border: 1px solid rgba(169, 54, 80, 0.18);
+    border-radius: 18px;
+    text-decoration: none !important;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.cart-box .cart-book-info > div > a:hover {
+    background: #b83f58;
+    color: white !important;
+    border-color: #b83f58;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(184, 63, 88, 0.18);
+}
+
+/* ===== Soft Dusty Rose Navbar ===== */
+
+nav {
+    background: #C98291 !important;
+    box-shadow: 0 5px 18px rgba(100, 55, 65, 0.12);
+}
+
+nav h2 {
+    color: #3F3037 !important;
+}
+
+nav a {
+    color: #3F3037 !important;
+    transition: all 0.25s ease;
+}
+
+nav a:hover {
+    color: #ffffff !important;
+}
+/* ===== Navbar Button Style ===== */
+
+nav a {
+    display: inline-block !important;
+    padding: 9px 18px !important;
+    margin-left: 8px !important;
+
+    background: rgba(255, 255, 255, 0.35) !important;
+    color: #3F3037 !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.55) !important;
+    border-radius: 22px !important;
+
+    text-decoration: none !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+
+    box-shadow: 0 3px 8px rgba(90, 45, 60, 0.08);
+
+    transition: all 0.25s ease !important;
+}
+
+nav a:hover {
+    background: #fff5f6 !important;
+    color: #8f4b5c !important;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 14px rgba(90, 45, 60, 0.15);
+}
+
+.book-card {
+    background: linear-gradient(
+        135deg,
+        #fffafa,
+        #fdecef
+    ) !important;
+
+    border: 1px solid rgba(190, 110, 125, 0.18);
+
+    box-shadow: 0 10px 25px rgba(130, 70, 85, 0.10);
+}
+
+/* ===== Premium Book Cards ===== */
+
+.book-card {
+    width: 210px;
+    height: 430px;
+    padding: 18px;
+
+    background: linear-gradient(
+        145deg,
+        #fffafb 0%,
+        #fff1f4 55%,
+        #fbe5ea 100%
+    ) !important;
+
+    border: 1px solid rgba(184, 92, 112, 0.22);
+    border-radius: 22px;
+
+    box-shadow:
+        0 12px 28px rgba(120, 55, 70, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* Decorative soft glow */
+
+.book-card::before {
+    content: "";
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+
+    top: -55px;
+    right: -45px;
+
+    background: rgba(224, 143, 160, 0.18);
+
+    border-radius: 50%;
+}
+
+
+/* Second decorative glow */
+
+.book-card::after {
+    content: "";
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+
+    bottom: -40px;
+    left: -35px;
+
+    background: rgba(238, 174, 187, 0.16);
+
+    border-radius: 50%;
+}
+
+
+/* Hover */
+
+.book-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(184, 92, 112, 0.38);
+
+    box-shadow:
+        0 18px 38px rgba(120, 55, 70, 0.18),
+        0 0 0 4px rgba(224, 143, 160, 0.08);
+}
+
+
+/* Keep content above decorations */
+
+.book-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Book cover */
+
+.book-card .book-cover {
+    border-radius: 14px;
+
+    box-shadow:
+        0 6px 15px rgba(90, 50, 60, 0.10);
+}
+
+
+/* Book title */
+
+.book-card h3 {
+    color: #3f3037 !important;
+}
+
+
+/* Book details */
+
+.book-card p {
+    color: #75636a !important;
+}
+
+
+/* Price */
+
+.book-card span {
+    color: #a84f63 !important;
+    font-weight: 700;
+}
+
+/* ===== Premium Book Detail Page ===== */
+
+.book-detail {
+    position: relative;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 45px;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(232, 160, 173, 0.28),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 5% 95%,
+            rgba(248, 205, 214, 0.30),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #fffafa,
+            #fff1f4
+        ) !important;
+
+    border: 1px solid rgba(184, 92, 112, 0.20);
+    border-radius: 30px;
+
+    box-shadow:
+        0 18px 45px rgba(110, 55, 70, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+    overflow: hidden;
+}
+
+
+/* Decorative circle */
+
+.book-detail::before {
+    content: "";
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -90px;
+    right: -60px;
+
+    background: rgba(220, 135, 153, 0.15);
+    border-radius: 50%;
+}
+
+
+/* Another decorative circle */
+
+.book-detail::after {
+    content: "";
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    bottom: -65px;
+    left: -45px;
+
+    background: rgba(236, 171, 185, 0.13);
+    border-radius: 50%;
+}
+
+
+/* ===== Book Image ===== */
+
+.book-detail-image {
+    position: relative;
+    z-index: 1;
+
+    background: linear-gradient(
+        145deg,
+        #f7e8ed,
+        #fceff2
+    ) !important;
+
+    border: 1px solid rgba(184, 92, 112, 0.16);
+    border-radius: 22px;
+
+    padding: 10px;
+    box-sizing: border-box;
+
+    box-shadow:
+        0 12px 28px rgba(100, 50, 65, 0.13),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+
+/* ===== Book Information ===== */
+
+.book-detail-info {
+    position: relative;
+    z-index: 1;
+}
+
+
+.book-category {
+    display: inline-block;
+
+    padding: 7px 15px;
+
+    background: #f6dce3;
+    color: #9d5265 !important;
+
+    border: 1px solid rgba(169, 82, 101, 0.15);
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 16px;
+}
+
+
+.book-detail-info h1 {
+    color: #3f3037 !important;
+    font-size: 44px;
+    margin-bottom: 14px;
+}
+
+
+.book-detail-info h3 {
+    color: #75636a !important;
+}
+
+
+.book-description {
+    color: #62545b !important;
+    line-height: 1.8;
+}
+
+
+/* ===== Price ===== */
+
+.book-price {
+    display: inline-block;
+
+    padding: 10px 20px;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    border: 1px solid rgba(184, 92, 112, 0.15);
+    border-radius: 15px;
+
+    color: #a84f63 !important;
+
+    box-shadow: 0 5px 15px rgba(120, 55, 70, 0.07);
+}
+
+
+/* ===== Add To Cart ===== */
+
+.add-cart-button {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    background: linear-gradient(
+        135deg,
+        #c98291,
+        #b96f80
+    ) !important;
+
+    color: white !important;
+
+    border: none;
+    border-radius: 25px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 8px 18px rgba(160, 75, 95, 0.20);
+
+    transition: all 0.3s ease;
+}
+
+
+.add-cart-button:hover {
+    background: linear-gradient(
+        135deg,
+        #b96f80,
+        #a95c70
+    ) !important;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 24px rgba(160, 75, 95, 0.25);
+}
+
+
+/* ===== Back To Books ===== */
+
+.back-button {
+    display: inline-block;
+
+    margin-top: 18px;
+    padding: 9px 17px;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    color: #795b64 !important;
+
+    border: 1px solid rgba(184, 92, 112, 0.18);
+    border-radius: 20px;
+
+    text-decoration: none !important;
+
+    transition: all 0.25s ease;
+}
+
+
+.back-button:hover {
+    background: #f6dce3;
+
+    color: #9d5265 !important;
+
+    transform: translateX(-3px);
+}
+
+/* =====================================================
+   FINAL PINK NAVBAR + BOOK DETAIL DESIGN
+   ===================================================== */
+
+
+/* ===== Soft Pink Navbar ===== */
+
+nav {
+    background: linear-gradient(
+        135deg,
+        #d99aa7,
+        #c98594
+    ) !important;
+
+    box-shadow:
+        0 6px 20px rgba(110, 55, 70, 0.14) !important;
+}
+
+nav h2 {
+    color: #3f3037 !important;
+}
+
+nav a {
+    display: inline-block !important;
+
+    margin-left: 8px !important;
+    padding: 9px 17px !important;
+
+    background: rgba(255, 255, 255, 0.32) !important;
+
+    color: #3f3037 !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.50) !important;
+    border-radius: 20px !important;
+
+    text-decoration: none !important;
+
+    transition: all 0.25s ease !important;
+}
+
+nav a:hover {
+    background: #fff5f6 !important;
+    color: #8f4b5c !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(100, 50, 65, 0.12);
+}
+
+/* ===== Checkout Page ===== */
+
+.checkout-section {
+    max-width: 720px;
+    margin: 55px auto 70px;
+    padding: 45px 50px;
+
+    background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #fffafa 100%
+    );
+
+    border: 1px solid rgba(184, 63, 88, 0.16);
+    border-radius: 28px;
+
+    box-shadow:
+        0 15px 35px rgba(120, 45, 65, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+    position: relative;
+    overflow: hidden;
+}
+
+.checkout-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    top: -100px;
+    right: -60px;
+
+    background: rgba(217, 154, 167, 0.18);
+
+    border-radius: 50%;
+}
+
+.checkout-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    bottom: -75px;
+    left: -55px;
+
+    background: rgba(244, 190, 205, 0.20);
+
+    border-radius: 50%;
+}
+
+
+/* ===== Checkout Heading ===== */
+
+.checkout-header {
+    position: relative;
+    z-index: 1;
+
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.checkout-header h2 {
+    margin: 0 0 10px;
+
+    color: #3f3037;
+
+    font-size: 38px;
+}
+
+.checkout-header p {
+    margin: 0;
+
+    color: #75636a;
+
+    font-size: 16px;
+}
+
+
+/* ===== Checkout Form ===== */
+
+.checkout-form {
+    position: relative;
+    z-index: 1;
+
+    max-width: 560px;
+    margin: auto;
+}
+
+
+/* ===== Form Fields ===== */
+
+.checkout-field {
+    margin-bottom: 22px;
+}
+
+.checkout-field label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #59434b;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+.checkout-field input,
+.checkout-field textarea {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    color: #3f3037;
+
+    border: 1px solid rgba(184, 63, 88, 0.20);
+
+    border-radius: 13px;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition: all 0.25s ease;
+}
+
+
+.checkout-field input {
+    height: 48px;
+}
+
+
+.checkout-field textarea {
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+
+.checkout-field input::placeholder,
+.checkout-field textarea::placeholder {
+    color: #a28d94;
+}
+
+
+/* ===== Input Focus ===== */
+
+.checkout-field input:focus,
+.checkout-field textarea:focus {
+    background: #ffffff;
+
+    border-color: #c98291;
+
+    box-shadow:
+        0 0 0 3px rgba(201, 130, 145, 0.13),
+        0 5px 15px rgba(120, 45, 65, 0.07);
+}
+
+
+/* ===== Place Order Button ===== */
+
+.place-order-button {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 14px 25px;
+
+    background: linear-gradient(
+        135deg,
+        #c98291,
+        #b96f80
+    );
+
+    color: white;
+
+    border: none;
+    border-radius: 25px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 18px rgba(160, 75, 95, 0.20);
+
+    transition: all 0.3s ease;
+}
+
+
+.place-order-button:hover {
+    background: linear-gradient(
+        135deg,
+        #b96f80,
+        #a95c70
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 24px rgba(160, 75, 95, 0.25);
+}
+
+
+/* ===== Checkout Mobile ===== */
+
+@media (max-width: 700px) {
+
+    .checkout-section {
+        margin: 35px 15px 50px;
+
+        padding: 35px 25px;
+
+        border-radius: 22px;
+    }
+
+    .checkout-header h2 {
+        font-size: 32px;
+    }
+
+    .checkout-form {
+        width: 100%;
+    }
+}
+
+.checkout-section {
+    background: #ffffff !important;
+}
+
+.checkout-section::before,
+.checkout-section::after {
+    opacity: 0.35;
+}
+/* ===== Light Background for Checkout & Login ===== */
+
+body.checkout-page,
+body.login-page {
+    background: #fff5f6 !important;
 }

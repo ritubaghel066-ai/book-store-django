@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{% static 'store/style.css' %}">
 </head>
 
-<body>
+<body class="checkout-page">
 
     <nav>
         <div>
@@ -27,47 +27,103 @@
     </nav>
 
 
-    <section class="featured-books">
+    <section class="checkout-section">
 
-        <h2>Checkout</h2>
+        <div class="checkout-header">
+            <h2>Checkout</h2>
 
-        <p class="section-subtitle">
-            Enter your details to place your order.
-        </p>
+            <p>
+                Enter your details to place your order.
+            </p>
+        </div>
 
 
-        <form method="POST">
+        <form method="POST" class="checkout-form">
 
             {% csrf_token %}
 
-            <input
-                type="text"
-                name="customer_name"
-                placeholder="Full Name"
-                required
-            >
+            <div class="checkout-field">
+                <label for="customer_name">Full Name</label>
 
-            <input
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
-                required
-            >
+                <input
+                    type="text"
+                    id="customer_name"
+                    name="customer_name"
+                    placeholder="Enter your full name"
+                    required
+                >
+            </div>
 
-             <textarea
-                name="address"
-                placeholder="Delivery Address"
-                rows="5"
-                required
-            ></textarea>
 
-            <button type="submit">
+            <div class="checkout-field">
+                <label for="phone">Phone Number</label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                    required
+                >
+            </div>
+
+
+            <div class="checkout-field">
+                <label for="address">Delivery Address</label>
+
+                <textarea
+                    id="address"
+                    name="address"
+                    placeholder="Enter your complete delivery address"
+                    rows="5"
+                    required
+                ></textarea>
+            </div>
+
+
+            <button type="submit" class="place-order-button">
                 Place Order
             </button>
 
         </form>
 
     </section>
+
+
+    <footer>
+        <div class="footer-content">
+
+            <div class="footer-section">
+                <h2>Book Store</h2>
+
+                <p>
+                    Discover books, explore new stories,
+                    and find your next favorite read.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+
+                <a href="/">Home</a>
+                <a href="/books/">Books</a>
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+
+                <p>Email: bookstore@example.com</p>
+                <p>Phone: +91 98765 43210</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Book Store. All Rights Reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>

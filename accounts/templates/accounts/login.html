@@ -8,9 +8,250 @@
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'store/style.css' %}">
+
+    <style>
+        /* ===== Login Page ===== */
+
+        .login-section {
+            max-width: 500px;
+            margin: 55px auto 70px;
+            padding: 45px 50px;
+
+           background: linear-gradient(
+            135deg,
+             #ffffff 0%,
+             #fffafa 100%
+            );
+
+            border: 1px solid rgba(184, 63, 88, 0.16);
+            border-radius: 28px;
+
+            box-shadow:
+                0 15px 35px rgba(120, 45, 65, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .login-section::before {
+            content: "";
+
+            position: absolute;
+
+            width: 170px;
+            height: 170px;
+
+            top: -90px;
+            right: -55px;
+
+            background: rgba(217, 154, 167, 0.18);
+
+            border-radius: 50%;
+        }
+
+
+        .login-section::after {
+            content: "";
+
+            position: absolute;
+
+            width: 120px;
+            height: 120px;
+
+            bottom: -65px;
+            left: -50px;
+
+            background: rgba(244, 190, 205, 0.18);
+
+            border-radius: 50%;
+        }
+
+
+        .login-section h2 {
+            position: relative;
+            z-index: 1;
+
+            margin: 0 0 10px;
+
+            color: #3f3037;
+
+            font-size: 38px;
+            text-align: center;
+        }
+
+
+        .login-section .section-subtitle {
+            position: relative;
+            z-index: 1;
+
+            margin-bottom: 30px;
+
+            color: #75636a;
+
+            text-align: center;
+        }
+
+
+        /* ===== Login Form ===== */
+
+        .auth-form {
+            position: relative;
+            z-index: 1;
+
+            width: 100%;
+        }
+
+
+        .auth-form input {
+            display: block;
+
+            width: 100%;
+            height: 48px;
+
+            margin-bottom: 18px;
+            padding: 13px 16px;
+
+            box-sizing: border-box;
+
+            background: rgba(255, 255, 255, 0.85);
+
+            color: #3f3037;
+
+            border: 1px solid rgba(184, 63, 88, 0.20);
+            border-radius: 13px;
+
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+
+            outline: none;
+
+            transition: all 0.25s ease;
+        }
+
+
+        .auth-form input::placeholder {
+            color: #a28d94;
+        }
+
+
+        .auth-form input:focus {
+            background: #ffffff;
+
+            border-color: #c98291;
+
+            box-shadow:
+                0 0 0 3px rgba(201, 130, 145, 0.13),
+                0 5px 15px rgba(120, 45, 65, 0.07);
+        }
+
+
+        /* ===== Login Button ===== */
+
+        .auth-form button {
+            display: block;
+
+            width: 100%;
+
+            margin-top: 5px;
+            padding: 14px 25px;
+
+            background: linear-gradient(
+                135deg,
+                #c98291,
+                #b96f80
+            );
+
+            color: white;
+
+            border: none;
+            border-radius: 25px;
+
+            font-size: 16px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 18px rgba(160, 75, 95, 0.20);
+
+            transition: all 0.3s ease;
+        }
+
+
+        .auth-form button:hover {
+            background: linear-gradient(
+                135deg,
+                #b96f80,
+                #a95c70
+            );
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 12px 24px rgba(160, 75, 95, 0.25);
+        }
+
+
+        /* ===== Register Link ===== */
+
+        .login-register {
+            position: relative;
+            z-index: 1;
+
+            margin-top: 25px;
+
+            color: #62545b;
+
+            text-align: center;
+            font-size: 15px;
+        }
+
+
+        .login-register a {
+            color: #a84f63;
+
+            font-weight: 600;
+
+            text-decoration: none;
+        }
+
+
+        .login-register a:hover {
+            color: #8f4b5c;
+
+            text-decoration: underline;
+        }
+
+
+        /* ===== Mobile ===== */
+
+        @media (max-width: 600px) {
+
+            .login-section {
+                margin: 35px 15px 50px;
+                padding: 35px 25px;
+                border-radius: 22px;
+            }
+
+            .login-section h2 {
+                font-size: 32px;
+            }
+        }
+
+        .login-section {
+    background: #ffffff !important;
+}
+
+.login-section::before,
+.login-section::after {
+    opacity: 0.35;
+}
+    </style>
 </head>
 
-<body>
+<body class="login-page">
 
     <nav>
         <div>
@@ -28,7 +269,7 @@
     </nav>
 
 
-    <section class="featured-books">
+    <section class="login-section">
 
         <h2>Login</h2>
 
@@ -36,7 +277,9 @@
             Login to your Book Store account.
         </p>
 
-        <form method="POST" class="auth-form"></form>
+
+        <form method="POST" class="auth-form">
+
             {% csrf_token %}
 
             <input
@@ -53,10 +296,14 @@
                 required
             >
 
-            <button type="submit">Login</button>
+            <button type="submit">
+                Login
+            </button>
+
         </form>
 
-        <p>
+
+        <p class="login-register">
             Don't have an account?
             <a href="/accounts/register/">Register here</a>
         </p>

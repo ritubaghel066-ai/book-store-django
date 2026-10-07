@@ -25,11 +25,12 @@
             <a href="/#categories">Categories</a>
             <a href="/about/">About</a>
             <a href="/contact/">Contact</a>
+
             {% if user.is_authenticated %}
-    <a href="/accounts/logout/">Logout</a>
-    {% else %}
-    <a href="/accounts/login/">Login</a>
-    {% endif %}
+                <a href="/accounts/logout/">Logout</a>
+            {% else %}
+                <a href="/accounts/login/">Login</a>
+            {% endif %}
         </div>
     </nav>
 
@@ -40,22 +41,36 @@
         <h2>Contact Us</h2>
 
         <p class="section-subtitle">
-            Have any questions? Feel free to contact us.
+            Have any questions? Feel free to get in touch with us.
         </p>
 
         <div class="contact-content">
 
-            <p>
-                Email: bookstore@example.com
-            </p>
+            <div class="contact-info">
 
-            <p>
-                Phone: +91 98765 43210
-            </p>
+                <h3>Get in Touch</h3>
 
-            <p>
-                Address: Nagpur, Maharashtra, India
-            </p>
+                <p>
+                    We'd love to hear from you. If you have any questions
+                    or need assistance, feel free to contact us.
+                </p>
+
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <p>bookstore@example.com</p>
+                </div>
+
+                <div class="contact-item">
+                    <h4>Phone</h4>
+                    <p>+91 98765 43210</p>
+                </div>
+
+                <div class="contact-item">
+                    <h4>Address</h4>
+                    <p>Nagpur, Maharashtra, India</p>
+                </div>
+
+            </div>
 
         </div>
 
@@ -87,11 +102,12 @@
                 <a href="/cart/">Cart</a>
                 <a href="/about/">About</a>
                 <a href="/contact/">Contact</a>
+
                 {% if user.is_authenticated %}
-    <a href="/accounts/logout/">Logout</a>
-{% else %}
-    <a href="/accounts/login/">Login</a>
-{% endif %}
+                    <a href="/accounts/logout/">Logout</a>
+                {% else %}
+                    <a href="/accounts/login/">Login</a>
+                {% endif %}
 
             </div>
 
