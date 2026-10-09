@@ -13,27 +13,26 @@
 <body>
 
     <!-- Navigation Bar -->
-<nav>
-    <div>
-        <h2>Book Store</h2>
-    </div>
+    <nav>
+        <div>
+            <h2>Book Store</h2>
+        </div>
 
-    <div>
-        <a href="/">Home</a>
-        <a href="/books/">Books</a>
-        <a href="/#categories">Categories</a>
-        <a href="/cart/">Cart</a>
-        <a href="/about/">About</a>
-        <a href="/contact/">Contact</a>
+        <div>
+            <a href="/">Home</a>
+            <a href="/books/">Books</a>
+            <a href="/#categories">Categories</a>
+            <a href="/cart/">Cart</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
 
-        {% if user.is_authenticated %}
-            <a href="/accounts/logout/">Logout</a>
-        {% else %}
-            <a href="/accounts/login/">Login</a>
-        {% endif %}
-    </div>
-</nav>
-    
+            {% if user.is_authenticated %}
+                <a href="/accounts/logout/">Logout</a>
+            {% else %}
+                <a href="/accounts/login/">Login</a>
+            {% endif %}
+        </div>
+    </nav>
 
 
     <!-- Cart Section -->
@@ -48,90 +47,95 @@
 
         {% if cart_items %}
 
-            {% for item in cart_items %}
-                <div class="cart-box"> 
-                <div class="cart-item">
+            <!-- Cart Box -->
+            <div class="cart-box">
 
-                    <div class="cart-book-info">
+                {% for item in cart_items %}
 
-                        {% if item.book.image %}
+                    <div class="cart-item">
 
-                            <img
-                                src="{{ item.book.image.url }}"
-                                alt="{{ item.book.title }}"
-                            >
+                        <div class="cart-book-info">
 
-                        {% endif %}
+                            {% if item.book.image %}
 
-                        <div>
+                                <img
+                                    src="{% static 'store/books/' %}{{ item.book.image.name|cut:'books/' }}"
+                                    alt="{{ item.book.title }}"
+                                >
 
-                            <h3>
-                                {{ item.book.title }}
-                            </h3>
+                            {% endif %}
 
-                            <p>
-                                By {{ item.book.author }}
-                            </p>
+                            <div>
+
+                                <h3>
+                                    {{ item.book.title }}
+                                </h3>
+
+                                <p>
+                                    By {{ item.book.author }}
+                                </p>
 
 
-                            <!-- Quantity Controls -->
-                            <div class="cart-quantity">
+                                <!-- Quantity Controls -->
+                                <div class="cart-quantity">
 
-                                <a href="{% url 'decrease_quantity' item.book.id %}">
-                                    -
-                                </a>
+                                    <a href="{% url 'decrease_quantity' item.book.id %}">
+                                        -
+                                    </a>
 
-                                <span>
-                                    {{ item.quantity }}
-                                </span>
+                                    <span>
+                                        {{ item.quantity }}
+                                    </span>
 
-                                <a href="{% url 'increase_quantity' item.book.id %}">
-                                    +
+                                    <a href="{% url 'increase_quantity' item.book.id %}">
+                                        +
+                                    </a>
+
+                                </div>
+
+
+                                <p>
+                                    Price: ₹{{ item.book.price }}
+                                </p>
+
+
+                                <!-- Remove Button -->
+                                <a href="{% url 'remove_from_cart' item.book.id %}">
+                                    Remove
                                 </a>
 
                             </div>
 
-
-                            <p>
-                                Price: ₹{{ item.book.price }}
-                            </p>
+                        </div>
 
 
-                            <!-- Remove Button -->
-                            <a href="{% url 'remove_from_cart' item.book.id %}">
-                                Remove
-                            </a>
+                        <!-- Item Total -->
+                        <div class="cart-item-total">
+
+                            <strong>
+                                ₹{{ item.item_total }}
+                            </strong>
 
                         </div>
 
                     </div>
 
+                {% endfor %}
 
-                    <!-- Item Total -->
-                    <div class="cart-item-total">
 
-                        <strong>
-                            ₹{{ item.item_total }}
-                        </strong>
+                <!-- Cart Total -->
+                <div class="cart-total">
 
-                    </div>
+                    <h2>
+                        Total: ₹{{ total_price }}
+                    </h2>
+
+                    <a href="/checkout/" class="hero-button">
+                        Proceed to Checkout
+                    </a>
 
                 </div>
 
-            {% endfor %}
-
-
-            <!-- Cart Total -->
-            <div class="cart-total">
-
-                <h2>
-                    Total: ₹{{ total_price }}
-                </h2>
-
-               <a href="/checkout/" class="hero-button">
-                    Proceed to Checkout
-                </a>
-            </div>
             </div>
 
         {% else %}
@@ -145,7 +149,7 @@
             </a>
 
         {% endif %}
-            
+
     </section>
 
 
